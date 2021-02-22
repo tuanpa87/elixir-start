@@ -54,7 +54,7 @@ defmodule Discuss.TopicController do
           |> put_flash(:info, "Topic Updated")
           |> redirect(to: topic_path(conn, :index))
       {:error, changeset} ->
-        render conn, "edit.html", changeset: changeset, topic: topic_id
+        render conn, "edit.html", changeset: changeset, topic: old_topic
     end
   end
 
